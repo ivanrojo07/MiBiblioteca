@@ -15,9 +15,9 @@ class LibrosController extends Controller
     public function index()
     {
         //
-        $libros = Libros::all();
-        return response()->json($libros);
-
+        $libros = Libros::orderBy('id', 'DESC')->paginate();
+        //return response()->json($libros);
+        return view('libros.index', compact('libros'));
     }
 
     /**
@@ -28,6 +28,7 @@ class LibrosController extends Controller
     public function create()
     {
         //
+        return "Formulario nuevo libro";
     }
 
     /**
