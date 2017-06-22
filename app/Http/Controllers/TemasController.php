@@ -15,6 +15,8 @@ class TemasController extends Controller
     public function index()
     {
         //
+        $temas = Temas::orderBy('id','DESC')->paginate();
+        return view('temas.index', compact('temas'));
     }
 
     /**

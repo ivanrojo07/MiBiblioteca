@@ -15,6 +15,8 @@ class AutoresController extends Controller
     public function index()
     {
         //
+        $autores = Autores::orderBy('id', 'DESC')->paginate();
+        return view('autores.index', compact('autores'));
     }
 
     /**

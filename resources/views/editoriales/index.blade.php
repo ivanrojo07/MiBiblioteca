@@ -1,25 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
 	<div class="row">
-		<h2>Listado de libros:
-		<a href="{{ route('libros.create') }}" class="btn btn-primary btn-lg pull-right"><i class="fa fa-book" aria-hidden="true">  Nuevo</i></a>
-		</h2>
+		<h2>Lista de Editoriales
+		<a class="btn btn-primary btn-lg pull-right"><i class="fa fa-align-justify" aria-hidden="true"></i> Nuevo</a></h2>
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
 					<th width="20px">ID</th>
-					<th>Nombre de libro</th>
+					<th>Nombres</th>
 					<th colspan="3">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($libros as $libro)
+				@foreach($editoriales as $editorial)
 				<tr>
-					<td>{{ $libro->id }}</td>
-					<td>{{ $libro->titulo }}</td>
+					<td>{{$editorial->id}}</td>
+					<td>{{$editorial->nombre}}</td>
 					<td>ver</td>
 					<td>editar</td>
 					<td>borrar</td>
@@ -27,8 +25,7 @@
 				@endforeach
 			</tbody>
 		</table>
-		{!!$libros->render() !!}
-        
-    </div>
+		{!!$editoriales->render()!!}
+	</div>
 </div>
 @endsection

@@ -15,6 +15,8 @@ class EditorialesController extends Controller
     public function index()
     {
         //
+        $editoriales = Editoriales::orderBy('id', 'DESC')->paginate();
+        return view('editoriales.index', compact('editoriales'));
     }
 
     /**

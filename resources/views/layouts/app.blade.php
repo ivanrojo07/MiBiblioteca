@@ -24,8 +24,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top topnav" >
+            <div class="container topnav">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -37,12 +37,12 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand topnav" href="{{ url('/') }}"><i class="fa fa-rebel" aria-hidden="true"></i>
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
@@ -57,7 +57,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> 
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -65,7 +65,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i> 
                                             Logout
                                         </a>
 
@@ -80,11 +80,18 @@
                 </div>
             </div>
         </nav>
+        <br>
+        <br>
 
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+     <!-- jQuery -->
+    <script src="{{asset('js/jquery.js')}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
 </html>
